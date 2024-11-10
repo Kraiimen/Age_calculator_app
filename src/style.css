@@ -79,7 +79,7 @@ input[type="number"], ::placeholder, :focus{
 }
 
 input[type="number"]::placeholder{
-    padding: 0;
+    border: none !important;
 }
 
 /* Remove type="number" arrows */
@@ -262,10 +262,6 @@ input[type="number"]::-webkit-outer-spin-button {
         font-size: 25px;
         padding: 15px;
     }
-
-    input[type="number"]::placeholder{
-        padding: 0;
-    }
 }
 
 @media screen and (max-width: 400px){
@@ -281,9 +277,5 @@ input[type="number"]::-webkit-outer-spin-button {
     input[type="number"], ::placeholder, :focus{
         font-size: 25px;
         padding: 15px;
-    }
-
-    input[type="number"]::placeholder{
-        padding: 0;
     }
 }
