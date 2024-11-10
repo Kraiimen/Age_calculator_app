@@ -80,6 +80,7 @@ input[type="number"], ::placeholder, :focus{
 
 /* Remove type="number" arrows */
 input[type="number"] {
+    outline: none;
     -webkit-appearance: none !important; 
     -moz-appearance: textfield !important;
     appearance: none !important;
