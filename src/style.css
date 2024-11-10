@@ -80,8 +80,9 @@ input[type="number"], ::placeholder, :focus{
 
 /* Remove type="number" arrows */
 input[type="number"] {
+    -webkit-appearance: none; 
     -moz-appearance: textfield;
-    appearance: textfield;
+    appearance: none;
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
