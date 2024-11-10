@@ -75,7 +75,7 @@ input[type="number"], ::placeholder, :focus{
     font-size: 30px;
     font-weight: 700;
 
-    padding: 20px;
+    padding: 10px;
 }
 
 input[type="number"]::placeholder{
