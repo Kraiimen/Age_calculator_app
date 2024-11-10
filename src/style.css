@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+html{
+    box-sizing: border-box;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: hsl(0, 0%, 94%);
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    background-color: hsl(0, 0%, 100%);
+    width: 740px;
+    /* height: 575px; */
+
+    margin: 30px;
+    padding: 40px 40px 45px 40px;
+    border-radius: 15px 15px 30% 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.input-container{
+    display: flex;
+    justify-content: space-between;
+    padding-right: 22%;
+}
+
+.input-container > * {
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    color: hsl(0, 1%, 44%);
+    
+    font-size: 13px;
+    font-weight: 700;
+
+    margin-bottom: 5px;
+    letter-spacing: 3px;
+}
+
+input[type="number"], ::placeholder, :focus{
+    color: hsl(0, 0%, 8%);
+
+    width: 80%;
+    height: 60px;
+
+    border-radius: 5px;
+    border-color: hsl(0, 0%, 94%);
+    border-width: 2px;
+    border-style: solid;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    padding: 20px;
+}
+
+/* Remove type="number" arrows */
+input[type="number"] {
+    appearance: textfield;
+}
+
+.line-container{
+    display: flex;
+}
+
+.line-container hr{
+    width: 100%;
+    align-self: center;
+    color: hsla(0, 0%, 94%, 0.5);
+    border-width: 2px;
+}
+
+.arrow-svg-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 120px;
+    height: 100px;
+    background-color: hsl(259, 100%, 65%);
+    border-radius: 50%;
+}
+
+.arrow-svg-container:hover{
+    cursor: pointer;
+    background-color: hsl(0, 0%, 8%);
+}
+
+.line-container svg{
+    width: 50px;
+}
+
+.date-container{
+    display: flex;
+    flex-direction: column;
+
+    font-size: 80px;
+    font-weight: 800;
+    font-style: italic;
+
+    color: hsl(0, 0%, 8%);
+    height: 100%;
+    width: 100%;
+}
+
+.date-container > *{
+    margin-bottom: -15px;
+}
+
+.years span, .months span, .days span{
+    color: hsl(259, 100%, 65%);
+    font-size: 85px;
+}
+
+.day-required, .month-required, .year-required, .invalid-date{
+    color: hsl(0, 100%, 67%);
+    font-size: 13px;
+    font-style: italic;
+    margin-top: 5px;
+
+    display: none;
+}
+
+.day-invalid, .month-invalid, .year-invalid{
+    color: hsl(0, 100%, 67%);
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 5px;
+
+    display: none;
+}
+
+.number-animation {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+/*     */
+
+@media screen and (max-width: 640px){
+    .arrow-svg-container{
+        width: 100px;
+        height: 80px;
+    }
+
+    .line-container svg{
+        width: 35px;
+    }
+    
+    .date-container{
+        font-size: 60px;
+        padding-bottom: 25px;
+    }
+
+    .date-container > *{
+        margin-bottom: -40px;
+    }
+}
+
+@media screen and (max-width: 570px){
+    .container{
+        padding: 30px 30px 35px 30px;
+    }
+
+    .input-container{
+        padding-right: 0;
+    }
+
+    .input-container > *{
+        align-items: center;
+    }
+
+    label{
+        width: 80%;
+    }
+
+    .line-container hr{
+        position: relative;
+        top: 20px;
+        margin: 50px 0;
+    }
+
+    .line-container svg{
+        width: 30px;
+    }
+
+    g {
+        stroke-width: 4;
+    }
+
+    .arrow-svg-container{
+        width: 75px;
+        height: 70px;
+        position: absolute;
+        left: calc(50% - 37.5px);
+        margin: 37px 0;
+    }
+
+    .date-container{
+        font-size: 50px;
+        padding-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 430px){
+    .date-container{
+        font-size: 40px;
+        padding-bottom: 20px;
+    }
+
+    .date-container > *{
+        margin-bottom: -45px;
+    }
+
+    input[type="number"], ::placeholder, :focus{
+        font-size: 25px;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .date-container{
+        font-size: 32px;
+        padding-bottom: 20px;
+    }
+
+    .date-container > *{
+        margin-bottom: -50px;
+    }
+
+    input[type="number"], ::placeholder, :focus{
+        font-size: 25px;
+        padding: 15px;
+    }
+}
