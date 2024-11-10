@@ -80,6 +80,7 @@ input[type="number"], ::placeholder, :focus{
 
 input[type="number"]::placeholder{
     border: none !important;
+    padding: 10px !important;
 }
 
 /* Remove type="number" arrows */
