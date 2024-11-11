@@ -87,7 +87,7 @@ arrow.addEventListener('click', () => {
     //AGE CALCULATION
     const age = ageCalculator(dayValue, monthValue, yearValue);
     //IF ALL THE INPUTS HAVE BEEN ENTERED CORRECTLY
-    if(dayValue != 0 && monthValue != 0 && yearValue != 0){
+    if(dayValue != 0 && monthValue != 0){
         //GET <span> and SET values
         document.querySelector(".days span").innerHTML = age.days;
         document.querySelector(".months span").innerHTML = age.months;

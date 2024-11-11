@@ -67,7 +67,7 @@ label{
 input[type="number"], ::placeholder, :focus{
     color: hsl(0, 0%, 8%);
 
-    width: 100%;
+    width: 130px;
     height: 60px;
 
     border-radius: 5px;
@@ -204,6 +204,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 
     input[type="number"], ::placeholder, :focus{
+        width: 110px;
         font-size: 20px;
     }
 
@@ -213,6 +214,10 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 @media screen and (max-width: 640px){
+    input[type="number"], ::placeholder, :focus{
+        width: 95px;
+    }
+
     label{
         font-size: 11px;
         letter-spacing: 2px;
@@ -246,7 +251,13 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 @media screen and (max-width: 570px){
+    input[type="number"], ::placeholder, :focus{
+        width: 120px;
+        font-size: 20px;
+    }
+
     .container{
+        min-width: ;
         padding: 30px 30px 35px 30px;
     }
 
@@ -294,6 +305,18 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 }
 
+@media screen and (max-width: 510px){
+    input[type="number"], ::placeholder, :focus{
+        width: 110px;
+    }
+}
+
+@media screen and (max-width: 470px){
+    input[type="number"], ::placeholder, :focus{
+        width: 98px;
+    }
+}
+
 @media screen and (max-width: 450px){
     .date-container{
         font-size: 40px;
@@ -305,6 +328,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 
     input[type="number"], ::placeholder, :focus{
+        width: 92px;
         font-size: 17px;
     }
 
@@ -324,6 +348,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 
     input[type="number"], ::placeholder, :focus{
+        width: 80px;
         font-size: 13px;
     }
 
