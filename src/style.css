@@ -66,7 +66,7 @@ label{
 input[type="number"], ::placeholder, :focus{
     color: hsl(0, 0%, 8%);
 
-    width: 92%;
+    width: 100%;
     height: 60px;
 
     border-radius: 5px;
@@ -263,7 +263,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 
     .arrow-svg-container{
-        width: 75px;
+        width: 70px;
         height: 70px;
         position: absolute;
         left: calc(50% - 37.5px);
