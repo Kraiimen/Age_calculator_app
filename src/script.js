@@ -19,7 +19,7 @@ const invalid_date_text = document.querySelector(".invalid-date");
 //SUBMIT BUTTON
 const arrow = document.querySelector(".arrow-svg-container");
 
-//
+// ----
 var dayValue = 0, monthValue  = 0, yearValue = 0, monthLength = 0;
 var invalid_day = false, invalid_month = false, invalid_year = false, invalid_date = false;;
 const regularYear = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -29,6 +29,7 @@ const leapYear    = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 const light_red = "hsl(0, 100%, 67%)";
 const smokey_grey = "hsl(0, 1%, 44%)";
 
+//WHEN THE BUTTON IS CLICKED
 arrow.addEventListener('click', () => {
     //DAY CHECK
     if(day_input.value == ""){
@@ -63,16 +64,19 @@ arrow.addEventListener('click', () => {
         checkYear(year_input.value);
     }
 
-
+    //INVALID DAY MESSAGE
     if(invalid_day == true) invalidLightRedON(day_label, day_input, day_invalid)
     else invalidLightRedOFF(day_label, day_input, day_invalid);
 
+    //INVALID MONTH MESSAGE
     if(invalid_month == true) invalidLightRedON(month_label, month_input, month_invalid)
     else invalidLightRedOFF(month_label, month_input, month_invalid);
 
+    //INVALID YEAR MESSAGE
     if(invalid_year == true) invalidLightRedON(year_label, year_input, year_invalid);
     else invalidLightRedOFF(year_label, year_input, year_invalid);
 
+    //INVALID DATE MESSAGE
     if(invalid_day == true && invalid_month == false && invalid_year == false){
         invalid_day = false;
         invalidLightRedOFF(day_label, day_input, day_invalid);
@@ -80,8 +84,11 @@ arrow.addEventListener('click', () => {
     }
     else invalidDateRedOFF();
 
+    //AGE CALCULATION
     const age = ageCalculator(dayValue, monthValue, yearValue);
+    //IF ALL THE INPUTS HAVE BEEN ENTERED CORRECTLY
     if(dayValue != 0 && monthValue != 0 && yearValue != 0){
+        //GET <span> and SET values
         document.querySelector(".days span").innerHTML = age.days;
         document.querySelector(".months span").innerHTML = age.months;
         document.querySelector(".years span").innerHTML = age.years;
@@ -101,6 +108,7 @@ arrow.addEventListener('click', () => {
     }
 });
 
+//CHECK HOW MANY DAYS ARE IN THE MONTH SELECTED
 function getMonthLength(m, y){
     var days = 0;
 
@@ -112,6 +120,7 @@ function getMonthLength(m, y){
     return days;
 }
 
+//CHECK IF THE CHOSEN IS VALID
 function checkDays(d){
     monthLength = getMonthLength(month_input, year_input);
 
@@ -134,14 +143,15 @@ function checkDays(d){
     }
 }
 
+//CHECK IF THE MONTH CHOSEN IS VALID
 function checkMonth(m, y){
     //If is current year
     if(y == new Date().getFullYear()){
-        //If is not between 0 and the current year
+        //If is not between 0 and the number of months in the current year
         if(!(m > 0 && m <= new Date().getMonth() +1)){
             invalid_month = true;
         }
-        //Therefore reset
+        //Therefore get month value
         else {
             invalid_month = false;
             monthValue = m;
@@ -153,7 +163,7 @@ function checkMonth(m, y){
         if(!(m > 0 && m <= 12)){
             invalid_month = true;
         }
-        //Therefore reset
+        //Therefore get month value
         else {
            invalid_month = false;
            monthValue = m;
@@ -161,6 +171,7 @@ function checkMonth(m, y){
     }
 }
 
+//CHECK IF THE YEAR CHOSEN IS VALID
 function checkYear(y){
     //If the year is in the future
     if(y > new Date().getFullYear()){
@@ -173,6 +184,7 @@ function checkYear(y){
     }
 }
 
+//INVALID DATE RED TEXT
 function invalidDateRedON(){
     day_label.style.color = light_red;
     day_input.style.borderColor = light_red;
@@ -185,7 +197,6 @@ function invalidDateRedON(){
 
     invalid_date_text.style.display = "block";
 }
-
 function invalidDateRedOFF(){
     day_label.style.color = smokey_grey;
     day_input.style.borderColor = smokey_grey;
@@ -199,30 +210,31 @@ function invalidDateRedOFF(){
     invalid_date_text.style.display = "none";
 }
 
+//INVALID INPUT RED TEXT
 function invalidLightRedON(label, input, invalid){
     label.style.color = light_red;
     input.style.borderColor = light_red;
     invalid.style.display = "block";
 }
-
 function invalidLightRedOFF(label, input, invalid){
     label.style.color = smokey_grey;
     input.style.borderColor = smokey_grey;
     invalid.style.display = "none";
 }
 
+//REQUIRED INPUT RED TEXT
 function requiredLightRedON(label, input, required){
     label.style.color = light_red;
     input.style.borderColor = light_red;
     required.style.display = "block";
 }
-
 function requiredLightRedOFF(label, input, required){
     label.style.color = smokey_grey;
     input.style.borderColor = smokey_grey;
     required.style.display = "none";
 }
 
+//AGE CALCULATION
 function ageCalculator(d, m, y){
     const givenDate = new Date(y, m-1, d);
     const currentDate = new Date();

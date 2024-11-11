@@ -13,20 +13,20 @@
         <div class="input-container">
             <div class="day-container">
                 <label class="day-label">DAY</label>
-                <input type="number" name="day" id="day-input" placeholder="DD" autocomplete="off">
+                <input type="number" name="day" id="day-input" placeholder="DD" autocomplete="off" min="0" max="31">
                 <p class="day-required">This field is required</p>
                 <p class="day-invalid">Must be a valid day</p>
                 <p class="invalid-date">Must be a valid date</p>
             </div>
             <div class="month-container">
                 <label class="month-label">MONTH</label>
-                <input type="number" name="month" id="month-input" placeholder="MM" autocomplete="off">
+                <input type="number" name="month" id="month-input" placeholder="MM" autocomplete="off" min="0" max="12">
                 <p class="month-required">This field is required</p>
                 <p class="month-invalid">Must be a valid month</p>
             </div>
             <div class="year-container">
                 <label class="year-label">YEAR</label>
-                <input type="number" name="year" id="year-input" placeholder="YYYY" autocomplete="off">
+                <input type="number" name="year" id="year-input" placeholder="YYYY" autocomplete="off" min="0" max="9999">
                 <p class="year-required">This field is required</p>
                 <p class="year-invalid">Must be in the past</p>
             </div>
