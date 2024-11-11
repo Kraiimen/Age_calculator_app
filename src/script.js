@@ -92,19 +92,17 @@ arrow.addEventListener('click', () => {
         document.querySelector(".days span").innerHTML = age.days;
         document.querySelector(".months span").innerHTML = age.months;
         document.querySelector(".years span").innerHTML = age.years;
-        
+
         //Add the animation
         document.querySelector(".days span").classList.add("number-animation");
         document.querySelector(".months span").classList.add("number-animation");
         document.querySelector(".years span").classList.add("number-animation");
-
         //Remove the class of the animation when it's finished
         setTimeout(() => {
             document.querySelector(".days span").classList.remove("number-animation");
             document.querySelector(".months span").classList.remove("number-animation");
             document.querySelector(".years span").classList.remove("number-animation");
         }, 800);
-
     }
 });
 
@@ -132,13 +130,13 @@ function checkDays(d){
         invalid_day = false;
         dayValue = d;
     }
-    
+
     //If is not between 0 and number of days in the month
     if(!(d > 0 && d <= monthLength) && (year_input.value != "") && (month_input.value != "")) {
-        invalid_day = true;
+        invalid_date = true;
     }
     else{
-        invalid_day = false;
+        invalid_date = false;
         dayValue = d;
     }
 }
